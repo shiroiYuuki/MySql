@@ -234,3 +234,180 @@ SELECT * FROM employees;
 * Bisa menambahkan **1 baris**, **banyak baris**, atau hanya **kolom tertentu**.
 
 ===========================================================================
+## Part 3 — DQL (Data Query Language / SELECT)
+
+### 1. SELECT * 
+
+---
+
+Menampilkan semua data dari tabel "employees".
+
+```sql
+SELECT * FROM employees;
+```
+
+-- Hasil: Semua kolom dan semua baris ditampilkan.
+
+===========================================================================
+
+### 2. SELECT → Specific Columns (first_name, last_name)
+
+---
+
+Menampilkan hanya kolom tertentu.
+
+```sql
+SELECT first_name, last_name FROM employees;
+```
+
+-- Hasil: Hanya "first_name" dan "last_name" yang ditampilkan.
+
+===========================================================================
+
+### 3. SELECT → Specific Columns (last_name, first_name)
+
+---
+
+Menampilkan kolom dalam urutan berbeda.
+
+```sql
+SELECT last_name, first_name FROM employees;
+```
+
+-- Hasil: Kolom "last_name" muncul lebih dulu dibanding "first_name".
+
+===========================================================================
+
+### 4. SELECT → WHERE (Exact Match by employee_id)
+
+---
+
+Menampilkan data karyawan dengan employee_id = 1.
+
+```sql
+SELECT *
+FROM employees
+WHERE employee_id = 1;
+```
+
+-- Hasil: Hanya 1 baris yang employee_id-nya sama dengan 1.
+
+===========================================================================
+
+### 5. SELECT → WHERE (Exact Match by first_name)
+
+---
+
+Menampilkan data karyawan dengan nama depan "Spongebob".
+
+```sql
+SELECT *
+FROM employees
+WHERE first_name = "Spongebob";
+```
+
+-- Hasil: Data karyawan bernama Spongebob.
+
+===========================================================================
+
+### 6. SELECT → WHERE (Comparison ≥)
+
+---
+
+Menampilkan karyawan dengan gaji per jam lebih besar atau sama dengan 15.
+
+```sql
+SELECT *
+FROM employees
+WHERE hourly_pay >= 15;
+```
+
+-- Hasil: Semua karyawan yang gajinya ≥ 15.
+
+===========================================================================
+
+### 7. SELECT → WHERE (Date Comparison)
+
+---
+
+Menampilkan karyawan yang tanggal masuk kerjanya sebelum atau sama dengan 3 Januari 2023.
+
+```sql
+SELECT hire_date, first_name
+FROM employees
+WHERE hire_date <= "2023-01-03";
+```
+
+-- Hasil: Nama + tanggal masuk kerja karyawan lama.
+
+===========================================================================
+
+### 8. SELECT → WHERE (Not Equal)
+
+---
+
+Menampilkan semua data kecuali employee_id = 1.
+
+```sql
+SELECT *
+FROM employees
+WHERE employee_id != 1;
+```
+
+-- Hasil: Semua data ditampilkan, kecuali ID 1.
+
+===========================================================================
+
+### 9. SELECT → WHERE (IS NULL)
+
+---
+
+Menampilkan karyawan yang belum memiliki tanggal masuk (hire_date kosong).
+
+```sql
+SELECT *
+FROM employees
+WHERE hire_date IS NULL;
+```
+
+-- Hasil: Karyawan tanpa tanggal masuk.
+
+===========================================================================
+
+### 10. SELECT → WHERE (IS NOT NULL)
+
+---
+
+Menampilkan karyawan yang sudah memiliki tanggal masuk (hire_date terisi).
+
+```sql
+SELECT *
+FROM employees
+WHERE hire_date IS NOT NULL;
+```
+
+-- Hasil: Semua karyawan dengan hire_date yang terisi.
+
+===========================================================================
+
+#### RANGKUMAN (DML → SELECT)
+
+* SELECT * → Ambil semua kolom.
+* SELECT col1, col2 → Ambil kolom tertentu saja.
+* WHERE → Menyaring data dengan kondisi.
+   * = → Sama dengan.
+   * != → Tidak sama dengan.
+   * >=, <= → Perbandingan angka/tanggal.
+   * IS NULL → Nilai kosong.
+   * IS NOT NULL → Nilai tidak kosong.
+
+===========================================================================
+
+#### KESIMPULAN (DML → SELECT)
+
+* SELECT digunakan untuk membaca/menampilkan data.
+* Bisa menampilkan semua kolom, kolom tertentu, atau disaring dengan kondisi.
+* Cocok untuk laporan, debugging, atau cek isi tabel.
+
+===========================================================================
+
