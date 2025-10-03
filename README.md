@@ -15,18 +15,21 @@
        hourly_pay DECIMAL(5, 2),        -- Gaji per jam (contoh 999.99)
        hire_date DATE                   -- Tanggal masuk kerja
    );
+
 ===========================================================================
 ### 2. RENAME TABLE
    ---------------------------------------------------------------------------
    Mengubah nama tabel "employees" menjadi "workers".
 
    RENAME TABLE employees TO workers;
+
 ===========================================================================
 ### 3. DROP TABLE
    ---------------------------------------------------------------------------
    Menghapus tabel secara permanen (HATI-HATI, datanya juga ikut hilang).
 
    DROP TABLE employees;
+
 ===========================================================================
 ### 4. ALTER TABLE → ADD
    ---------------------------------------------------------------------------
@@ -36,6 +39,7 @@
    ADD phone_number VARCHAR(15);
 
    -- Menambah kolom "phone_number" dengan maksimal 15 karakter.
+
 ===========================================================================
 ### 5. ALTER TABLE → RENAME COLUMN
    ---------------------------------------------------------------------------
@@ -45,6 +49,7 @@
    RENAME COLUMN phone_number TO email;
 
    -- Kolom "phone_number" diubah jadi "email".
+
 ===========================================================================
 ### 6. ALTER TABLE → MODIFY
    ---------------------------------------------------------------------------
@@ -54,6 +59,7 @@
    MODIFY COLUMN email VARCHAR(15);
 
    -- Kolom "email" sekarang maksimal 15 karakter.
+
 ===========================================================================
 ### 7. ALTER TABLE → MODIFY + AFTER
    ---------------------------------------------------------------------------
@@ -64,6 +70,7 @@
 
    -- Kolom "email" diubah panjangnya jadi 100 karakter
    -- lalu diletakkan setelah "last_name".
+
 ===========================================================================
 ### 8. ALTER TABLE → MODIFY + FIRST
    ---------------------------------------------------------------------------
@@ -73,6 +80,7 @@
    MODIFY email VARCHAR(100) FIRST;
 
    -- Kolom "email" sekarang ada di posisi paling depan tabel.
+
 ===========================================================================
 ### 9. ALTER TABLE → DROP COLUMN
    ---------------------------------------------------------------------------
@@ -82,6 +90,7 @@
    DROP COLUMN email;
 
    -- Kolom "email" dihapus dari tabel.
+
 ===========================================================================
 #### 1. CREATE TABLE
    → Membuat tabel baru beserta kolomnya.
@@ -98,6 +107,7 @@
       - RENAME COLUMN   → Mengubah nama kolom.
       - MODIFY COLUMN   → Mengubah tipe data/ukuran kolom, atau posisi kolom.
       - DROP COLUMN     → Menghapus kolom dari tabel.
+
 ===========================================================================
 #### KESIMPULAN:
 - CREATE → bikin sesuatu yang baru.
