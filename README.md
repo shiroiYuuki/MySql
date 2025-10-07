@@ -3,6 +3,93 @@
 # CATATAN MYSQL
 
 ===========================================================================
+## Part 0 — DATABASE MANAGEMENT (CREATE, USE, DROP, ALTER)
+
+### 1. CREATE DATABASE
+
+---
+
+Membuat database baru bernama **MyDB**.
+
+```sql
+CREATE DATABASE MyDB;
+```
+
+-- Hasil: Database baru bernama MyDB berhasil dibuat.
+
+===========================================================================
+
+### 2. USE DATABASE
+
+---
+
+Memilih database yang akan digunakan untuk operasi berikutnya.
+
+```sql
+USE MyDB;
+```
+
+-- Hasil: Semua perintah berikutnya akan dijalankan di dalam database MyDB.
+
+===========================================================================
+
+### 3. DROP DATABASE
+
+---
+
+Menghapus database secara permanen (termasuk seluruh tabel dan datanya).
+⚠️HATI-HATI!⚠️ Setelah dihapus, data tidak bisa dikembalikan.
+
+```sql
+DROP DATABASE MyDB;
+```
+
+-- Hasil: Database MyDB dan seluruh isinya dihapus.
+
+===========================================================================
+
+### 4. ALTER DATABASE → READ ONLY
+
+---
+
+Mengubah mode database menjadi read-only (tidak bisa diubah/diedit).
+Biasanya digunakan untuk backup atau proteksi data.
+
+```sql
+ALTER DATABASE MyDB READ ONLY = 1;
+```
+
+-- Hasil: Database MyDB hanya bisa dibaca, tidak bisa dimodifikasi.
+
+---
+
+Untuk mengembalikannya agar bisa diubah lagi:
+
+```sql
+ALTER DATABASE MyDB READ ONLY = 0;
+```
+
+-- Hasil: Database bisa kembali di-edit seperti biasa.
+
+===========================================================================
+
+#### RANGKUMAN (DATABASE MANAGEMENT)
+
+* CREATE DATABASE → Membuat database baru.
+* USE → Memilih database aktif untuk digunakan.
+* DROP DATABASE → Menghapus database beserta seluruh datanya.
+* ALTER DATABASE → Mengubah properti database (misal: read-only).
+
+===========================================================================
+
+#### KESIMPULAN (DATABASE MANAGEMENT)
+
+* CREATE → bikin database baru.
+* USE → masuk ke database tertentu.
+* DROP → hapus database beserta isinya.
+* ALTER → ubah pengaturan database (contohnya read-only mode).
+
+===========================================================================
 
 ## Part 1 — DDL (Data Definition Language)
 
