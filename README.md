@@ -101,7 +101,7 @@ Membuat tabel baru bernama "employees".
 
 ```sql
 CREATE TABLE employees (
-    employee_id INT PRIMARY KEY,     -- Kolom unik sebagai primary key
+    employee_id INT,                 -- Kolom unik sebagai primary key
     first_name VARCHAR(50),          -- Nama depan, maksimal 50 karakter
     last_name VARCHAR(50),           -- Nama belakang, maksimal 50 karakter
     hourly_pay DECIMAL(5, 2),        -- Gaji per jam (contoh 999.99)
@@ -484,7 +484,7 @@ WHERE hire_date IS NOT NULL;
 * WHERE → Menyaring data dengan kondisi.
    * = → Sama dengan.
    * != → Tidak sama dengan.
-   * >=, <= → Perbandingan angka/tanggal.
+   * (>=) , (<=) → Perbandingan angka/tanggal.
    * IS NULL → Nilai kosong.
    * IS NOT NULL → Nilai tidak kosong.
 
