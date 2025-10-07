@@ -411,3 +411,64 @@ WHERE hire_date IS NOT NULL;
 
 ===========================================================================
 
+## Part 4 — DML (Data Manipulation Language / UPDATE & DELETE)
+
+### 1. UPDATE → Mengubah Data
+
+---
+
+Mengubah nilai kolom pada baris tertentu.
+
+```sql
+UPDATE employees
+SET hourly_pay = 10.25
+WHERE employee_id = 6;
+
+SELECT * FROM employees;
+```
+
+-- Hasil: Gaji (hourly_pay) milik karyawan dengan employee_id = 6 berubah jadi 10.25.
+
+Catatan Penting:
+Selalu gunakan WHERE saat UPDATE supaya tidak semua data ikut berubah.
+Jika WHERE dihapus, seluruh baris akan di-update dengan nilai baru.
+
+===========================================================================
+
+### 2. DELETE → Menghapus Data
+
+---
+
+Menghapus baris tertentu dari tabel.
+
+```sql
+DELETE FROM employees
+WHERE employee_id = 6;
+
+SELECT * FROM employees;
+```
+
+-- Hasil: Data dengan employee_id = 6 dihapus dari tabel.
+Catatan Penting:
+Sama seperti UPDATE, jangan pernah lupa WHERE.
+Jika WHERE dihapus, semua data akan terhapus permanen dari tabel.
+
+===========================================================================
+
+#### RANGKUMAN (DML → UPDATE & DELETE)
+
+* UPDATE → Mengubah nilai kolom pada data tertentu.
+* DELETE → Menghapus baris data dari tabel.
+* Gunakan WHERE untuk menargetkan baris tertentu.
+* Gunakan SELECT * FROM employees; setelahnya untuk memastikan hasilnya.
+
+===========================================================================
+
+#### KESIMPULAN (DML → UPDATE & DELETE)
+
+* UPDATE = ubah isi data.
+* DELETE = hapus data.
+* Tanpa WHERE = semua data bisa berubah atau terhapus.
+
+===========================================================================
+
